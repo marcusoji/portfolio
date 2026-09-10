@@ -3,470 +3,496 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oji Marcus Ifeanyichukwu | Creative Developer</title>
+    <title>Marcus Oji — Full-Stack Engineer & Systems Builder</title>
+    <meta name="description" content="Marcus Oji is a full-stack developer from Delta State, Nigeria. I design and build production-grade web systems with TypeScript, React, Node.js,and PostgreSQL.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Sora:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   <link rel="stylesheet" href="port.css">
+    <link rel="stylesheet" href="port.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">Marcus Oji</a>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="menu-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
-    </header>
 
+<!-- Scroll progress bar -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- Ambient background layers -->
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-orb orb-a" aria-hidden="true"></div>
+<div class="bg-orb orb-b" aria-hidden="true"></div>
+<div class="bg-noise" aria-hidden="true"></div>
+
+<!-- Custom cursor -->
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+        <a href="#home" class="logo" aria-label="Marcus Oji — home">
+            <span class="logo-led" aria-hidden="true"></span>
+            <span class="logo-text">MARCUS<span class="logo-dot">.</span>OJI</span>
+            <span class="logo-role">/full-stack</span>
+        </a>
+        <nav class="nav" id="nav" aria-label="Primary">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">home</a></li>
+                <li><a href="#about" class="nav-link">about</a></li>
+                <li><a href="#skills" class="nav-link">skills</a></li>
+                <li><a href="#projects" class="nav-link">projects</a></li>
+                <li><a href="#contact" class="nav-link">contact</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">hire_me<span class="chip-arrow">→</span></a>
+        </nav>
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<main>
+    <!-- ============ HERO ============ -->
     <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-label">
-                    <i class="fas fa-code"></i> Available for Freelance
-                </div>
-                <h1>Creative Developer & Problem Solver</h1>
-                <p class="hero-subtitle">
-                    Building fast, accessible, and visually stunning digital experiences that make an impact. 
-                    Specializing in frontend development with a passion for clean code and innovative solutions.
+        <div class="container hero-inner">
+            <div class="hero-copy">
+                <p class="hero-eyebrow reveal" data-delay="0">
+                    <span class="eyebrow-pulse" aria-hidden="true"></span>
+                    available_for_freelance // Delta State, NG
                 </p>
-                <div class="cta-buttons">
+                <h1 class="hero-title">
+                    BUILDING <span class="title-glow">SYSTEMS</span><br>
+                    THAT <span class="title-outline">SHIP</span><span class="title-caret" aria-hidden="true"></span>
+                </h1>
+                <p class="hero-sub reveal" data-delay="500">
+                    I'm a full-stack developer turning raw ideas into production-grade platforms —
+                    TypeScript, React, Node.js,and PostgreSQL under the hood, pixel-perfect polish on top.
+
+                </p>
+                <div class="cta-buttons reveal" data-delay="750">
                     <a href="#projects" class="btn btn-primary">
-                        <i class="fas fa-rocket"></i> View My Work
+                        <span class="btn-label">view_work</span>
+                        <i class="fa-solid fa-arrow-right btn-icon"></i>
                     </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        <i class="fas fa-envelope"></i> Let's Talk
+                    <a href="#contact" class="btn btn-ghost">
+                        <span class="btn-label">let's_talk</span>
+                        
                     </a>
                 </div>
+                <div class="terminal reveal" data-delay="1000" aria-label="Typed terminal introduction">
+                    <div class="terminal-bar">
+                        <span class="term-dot term-red"></span>
+                        <span class="term-dot term-amber"></span>
+                        <span class="term-dot term-green"></span>
+                        <span class="term-title">marcus@portfolio:~</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p class="term-line"><span class="term-prompt">➜</span> <span class="term-cmd">whoami</span></p>
+                        <p class="term-line term-out">>_ <span class="term-type" id="termType"></span><span class="term-cursor" aria-hidden="true"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="hero-hud reveal" data-delay="600" aria-hidden="true">
+                <div class="hud-card glass">
+                    <p class="hud-label mono-dim">system.status</p>
+                    <p class="hud-value"><span class="led led-green"></span> ONLINE</p>
+                </div>
+                <div class="hud-card glass">
+                    <p class="hud-label mono-dim">primary.stack</p>
+                    <p class="hud-value"><span class="led led-cyan"></span> TS / PERN</p>
+                </div>
+                <div class="hud-card glass">
+                    <p class="hud-label mono-dim">location.coords</p>
+                    <p class="hud-value">6.4500°N / 7.4950°E</p>
+                </div>
+                <div class="hud-tick hud-tick-tr"></div>
+                <div class="hud-tick hud-tick-bl"></div>
+            </aside>
+        </div>
+
+        <div class="tech-marquee" aria-hidden="true">
+            <div class="marquee-track" id="marqueeTrack">
+                <span>TypeScript</span><i class="fa-solid fa-asterisk"></i>
+                <span>React</span><i class="fa-solid fa-asterisk"></i>
+                <span>Node.js</span><i class="fa-solid fa-asterisk"></i>
+                <span>PostgreSQL</span><i class="fa-solid fa-asterisk"></i>
+                <span>Prisma</span><i class="fa-solid fa-asterisk"></i>
+                <span>Paystack API</span><i class="fa-solid fa-asterisk"></i>
+                <span>Redis</span><i class="fa-solid fa-asterisk"></i>
+                <span>Vue.js</span><i class="fa-solid fa-asterisk"></i>
+                <span>Docker</span><i class="fa-solid fa-asterisk"></i>
+                <span>REST APIs</span><i class="fa-solid fa-asterisk"></i>
             </div>
         </div>
     </section>
 
-    <section id="about">
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
         <div class="container">
+            <div class="section-head reveal">
+                <p class="section-code mono-dim">[ 01 //about ]</p>
+                <h2 class="section-title">Behind the build<span class="text-accent">.</span></h2>
+            </div>
+
             <div class="about-grid">
-                <div class="about-image fade-in">
-                    <img src="442.jpg" alt="Marcus Oji">
+                <div class="about-visual reveal">
+                    <div class="photo-frame">
+                        <img src="442.jpg" alt="Portrait of Marcus Oji" class="about-photo">
+                        <div class="frame-corner c-tl"></div>
+                        <div class="frame-corner c-tr"></div>
+                        <div class="frame-corner c-bl"></div>
+                        <div class="frame-corner c-br"></div>
+                        <span class="frame-label mono-dim">subject.jpg // delta_state</span>
+                    </div>
+                    <div class="photo-scan" aria-hidden="true"></div>
                 </div>
-                <div class="about-content fade-in">
-                    <div class="section-label">About Me</div>
-                    <h3>Passionate Developer From Delta State, Nigeria</h3>
-                    <p>
-                        With over 3 years of hands-on experience in web development, I transform ideas into 
-                        pixel-perfect reality. My journey began at age 14 when I built my first website, and 
-                        I've been obsessed with creating exceptional digital experiences ever since.
+
+                <div class="about-content reveal" data-delay="150">
+                    <h3>Full-stack engineer turning complexity into calm, usable software.</h3>
+                    <p class="about-lead">
+                        Based in Delta State, Nigeria, I've spent <strong>3+ years</strong> shipping real products —
+                        from student dues platforms with Paystack payments to enterprise attendance systems with face recognition.
+
                     </p>
                     <p>
-                        I specialize in frontend development with React, Vue.js, and modern JavaScript, 
-                        but I'm equally comfortable working across the full stack. Every project is an 
-                        opportunity to push boundaries and deliver solutions that exceed expectations.
+                        My journey started at 14, building my first website. Since then I've stacked a
+                        full PERN toolkit: TypeScript, React interfaces, Node services, and
+                        PostgreSQL schemas you can reason about. Every project is a chance to push boundaries
+                        and deliver systems that outlive the demo..
                     </p>
+                    <ul class="about-points">
+                        <li><i class="fa-solid fa-circle-check"></i> Production-grade full-stack architecture</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Clean, typed, testable code</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Design that feels fast and considered</li>
+                    </ul>
+
                     <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-number">6+</div>
-                            <div class="stat-label">Real Projects Deployed</div>
+                        <div class="stat-card glass" data-count="6" data-suffix="+">
+                            <span class="stat-number mono-dim">0+</span>
+                            <span class="stat-label">ships.deployed</span>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-number">25+</div>
-                            <div class="stat-label">Satisfied Clients</div>
+                        <div class="stat-card glass" data-count="25" data-suffix="+">
+                            <span class="stat-number mono-dim">0+</span>
+                            <span class="stat-label">clients.served</span>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-number">3+</div>
-                            <div class="stat-label">Years Experience</div>
+                        <div class="stat-card glass" data-count="3" data-suffix="+">
+                            <span class="stat-number mono-dim">0+</span>
+                            <span class="stat-label">yrs.experience</span>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-number">1000+</div>
-                            <div class="stat-label">Cups of Coffee ☕</div>
+                        <div class="stat-card glass" data-count="100" data-suffix="+">
+                            <span class="stat-number mono-dim">0+</span>
+                            <span class="stat-label">cups.of.coffee</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="skills">
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section section-alt">
         <div class="container">
-            <div class="section-header">
-                <div class="section-label">My Expertise</div>
-                <h2 class="section-title">Skills & Technologies</h2>
-                <p class="section-desc">
-                    A comprehensive toolkit built through real-world projects and continuous learning
-                </p>
+            <div class="section-head reveal">
+                <p class="section-code mono-dim">[ 02 //skills ]</p>
+                <h2 class="section-title">Toolkit &amp; mastery<span class="text-accent">.</span></h2>
+                <p class="section-desc">A stack hardened by real projects and continuous iteration.</p>
             </div>
             <div class="skills-grid">
-                <div class="skill-category fade-in">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fab fa-html5"></i>
-                        </div>
-                        <h3>Frontend Development</h3>
+                <div class="skill-category glass reveal">
+                    <div class="skill-head">
+                        <span class="skill-icon"><i class="fa-brands fa-react"></i></span>
+                        <h3>Frontend</h3>
+                        <span class="skill-code mono-dim">/ui</span>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Responsive Design</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%"></div>
-                        </div>
+                    <div class="skill-item" style="--w:95%">
+                        <div class="skill-info"><span>React + TypeScript</span><span class="mono-dim">95%</span></div>
+                        <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Adobe XD</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
+                    <div class="skill-item" style="--w:90%">
+                        <div class="skill-info"><span>Responsive Systems</span><span class="mono-dim">90%</span></div>
+                        <div class="skill-bar"><div class="skill-progress"></div></div>
+                    </div>
+                    <div class="skill-item" style="--w:85%">
+                        <div class="skill-info"><span>Vue.js</span><span class="mono-dim">85%</span></div>
+                        <div class="skill-bar"><div class="skill-progress"></div></div>
+                    </div>
+                    <div class="skill-item" style="--w:80%">
+                        <div class="skill-info"><span>UI Motion &amp; Animation</span><span class="mono-dim">80%</span></div>
+                        <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
                 </div>
-
-                <div class="skill-category fade-in">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h3>Backend & Other</h3>
+                <div class="skill-category glass reveal" data-delay="120">
+                    <div class="skill-head">
+                        <span class="skill-icon"><i class="fa-solid fa-server"></i></span>
+                        <h3>Backend &amp; Data</h3>
+                        <span class="skill-code mono-dim">/api</span>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Node.js</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 75%"></div>
-                        </div>
+                    <div class="skill-item" style="--w:90%">
+                        <div class="skill-info"><span>Node.js / Express</span><span class="mono-dim">90%</span></div>
+                        <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Git & GitHub</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
+                    <div class="skill-item" style="--w:85%">
+                        <div class="skill-info"><span>PostgreSQL / Prisma</span><span class="mono-dim">85%</span></div>
+                        <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>C++</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%"></div>
-                        </div>
+                    <div class="skill-item" style="--w:80%">
+                        <div class="skill-info"><span>REST API Design</span><span class="mono-dim">80%</span></div>
+                        <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Testing & Debugging</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
+                    <div class="skill-item" style="--w:75%">
+                        <div class="skill-info"><span>Payments &amp; Webhooks</span><span class="mono-dim">75%</span></div>
+                        <div class="skill-bar"><div class="skill-progress"></div></div>
+                    </div>
+                </div>
+                <div class="skill-category glass reveal" data-delay="240">
+                    <div class="skill-head">
+                        <span class="skill-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                        <h3>Systems &amp; Tools</h3>
+                        <span class="skill-code mono-dim">/ops</span>
+                    </div>
+                    <div class="skill-item" style="--w:90%">
+                        <div class="skill-info"><span>Git / GitHub</span><span class="mono-dim">90%</span></div>
+                        <div class="skill-bar"><div class="skill-progress"></div></div>
+                    </div>
+                    <div class="skill-item" style="--w:80%">
+                        <div class="skill-info"><span>C++ / Algorithms</span><span class="mono-dim">80%</span></div>
+                        <div class="skill-bar"><div class="skill-progress"></div></div>
+                    </div>
+                    <div class="skill-item" style="--w:85%">
+                        <div class="skill-info"><span>Testing &amp; Debugging</span><span class="mono-dim">85%</span></div>
+                        <div class="skill-bar"><div class="skill-progress"></div></div>
+                    </div>
+                    <div class="skill-item" style="--w:70%">
+                        <div class="skill-info"><span>Docker / Deploy</span><span class="mono-dim">70%</span></div>
+                        <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="projects">
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section">
         <div class="container">
-            <div class="section-header">
-                <div class="section-label">Portfolio</div>
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-desc">
-                    Real projects built with passion, deployed with purpose
-                </p>
+            <div class="section-head reveal">
+                <p class="section-code mono-dim">[ 03 //projects ]</p>
+                <h2 class="section-title">Featured builds<span class="text-accent">.</span></h2>
+                <p class="section-desc">Real products, deployed and maintained — not tutorials.</p>
             </div>
             <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800" alt="Attendance Management System">
-                        <div class="project-status">Live Project</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Attendance Management System</h3>
-                        <p class="project-desc">
-                            A comprehensive attendance tracking system with real-time monitoring, automated reporting, 
-                            and intuitive dashboard for efficient workforce management.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">HTML/CSS</span>
-                            <span class="tag">Firebase</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/marcusoji/Attendms" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="https://github.com/marcusoji/Attendms" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
+                <article class="project-card glass reveal">
+                    <div class="project-media">
+                        <img src="https://images.unsplash.com/photo-1553729459-ace09e9619f?w=900&amp;q=70" alt="NACOS Dues Platform dashboard" loading="lazy">
+                        <span class="project-status"><span class="led led-green"></span> LIVE</span>
+                        <div class="project-overlay">
+                            <a href="https://github.com/marcusoji/Nacos_dues" target="_blank" rel="noopener" class="overlay-btn"><i class="fa-brands fa-github"></i> Code</a>
+                            <a href="https://nacos-dues.vercel.app" target="_blank" rel="noopener" class="overlay-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
                         </div>
                     </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800" alt="Besty Bar Website">
-                        <div class="project-status">Live Project</div>
+                    <div class="project-body">
+                        <div class="project-meta"><span class="project-index mono-dim">p/01</span><span class="project-year mono-dim">2026</span></div>
+                        <h3>NACOS Dues Platform</h3>
+                        <p class="project-desc">Production dues-payment system for departmental chapters — React + TypeScript frontend, Express + PostgreSQL (Prisma) backend,, Paystack checkout,, MFA and an immutable audit log.</p>
+                        <div class="project-tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">Paystack</span></div>
                     </div>
-                    <div class="project-content">
-                        <h3>Besty Bar - Business Website</h3>
-                        <p class="project-desc">
-                            Modern, responsive website for a local business featuring online menu, booking system, 
-                            and seamless mobile experience that increased their online presence significantly.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/marcusoji/bestybar" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="https://github.com/marcusoji/bestybar" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
+                </article>
+                <article class="project-card glass reveal" data-delay="100">
+                    <div class="project-media">
+                        <img src="https://images.unsplash.com/photo-1532099869874-f15883c0fb2b?w=900&amp;q=70" alt="AttendanceApp face recognition attendance system" loading="lazy">
+                        <span class="project-status"><span class="led led-green"></span> LIVE</span>
+                        <div class="project-overlay">
+                            <a href="https://github.com/marcusoji/Attendance_app" target="_blank" rel="noopener" class="overlay-btn"><i class="fa-brands fa-github"></i> Code</a>
+                            <a href="https://attendms.vercel.app" target="_blank" rel="noopener" class="overlay-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
                         </div>
                     </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800" alt="Quiz Application">
-                        <div class="project-status">Live Project</div>
+                    <div class="project-body">
+                        <div class="project-meta"><span class="project-index mono-dim">p/02</span><span class="project-year mono-dim">2026</span></div>
+                        <h3>AttendanceApp</h3>
+                        <p class="project-desc">Enterprise attendance platform built for scale — face recognition,, WebAuthn fingerprint login,, PostgreSQL at scale and a Redis-powered real-time pipeline.</p>
+                        <div class="project-tags"><span class="tag">JavaScript</span><span class="tag">PostgreSQL</span><span class="tag">Face API</span><span class="tag">Redis</span></div>
                     </div>
-                    <div class="project-content">
-                        <h3>Interactive Quiz Application</h3>
-                        <p class="project-desc">
-                            Dynamic quiz platform with timer functionality, score tracking, and beautiful UI. 
-                            Perfect for educational purposes and skill assessment.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">HTML/CSS</span>
-                            <span class="tag">LocalStorage</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/marcusoji/assignment" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="https://github.com/marcusoji/assignment" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
+                </article>
+                <article class="project-card glass reveal" data-delay="200">
+                    <div class="project-media">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd1?w=900&amp;q=70" alt="Let's Spend finance tracker dashboard" loading="lazy">
+                        <span class="project-status"><span class="led led-green"></span> LIVE</span>
+                        <div class="project-overlay">
+                            <a href="https://github.com/marcusoji/letspendapp" target="_blank" rel="noopener" class="overlay-btn"><i class="fa-brands fa-github"></i> Code</a>
+                            <a href="https://letspendapp.vercel.app" target="_blank" rel="noopener" class="overlay-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
                         </div>
                     </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800" alt="University Updates Platform">
-                        <div class="project-status">Live Project</div>
+                    <div class="project-body">
+                        <div class="project-meta"><span class="project-index mono-dim">p/03</span><span class="project-year mono-dim">2025</span></div>
+                        <h3>Let's Spend App</h3>
+                        <p class="project-desc">Financial analyser and spending tracker built with React — clean data visualizationsand real-time insight into where money actually goes.</p>
+                        <div class="project-tags"><span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">Charts</span></div>
                     </div>
-                    <div class="project-content">
-                        <h3>All University Updates Platform</h3>
-                        <p class="project-desc">
-                            Centralized information hub for university news, announcements, and updates. 
-                            Clean interface with easy navigation and content management.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/marcusoji/Alluniversityupadtes" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="https://github.com/marcusoji/Alluniversityupadtes" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
+                </article>
+                <article class="project-card glass reveal">
+                    <div class="project-media">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f?w=900&amp;q=70" alt="Uniportal student PWA dashboard" loading="lazy">
+                        <span class="project-status"><span class="led led-green"></span> LIVE</span>
+                        <div class="project-overlay">
+                            <a href="https://github.com/marcusoji/Uniportal" target="_blank" rel="noopener" class="overlay-btn"><i class="fa-brands fa-github"></i> Code</a>
+                            <a href="https://marcusoji.github.io/Uniportal/" target="_blank" rel="noopener" class="overlay-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
                         </div>
                     </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800" alt="Todo Application">
-                        <div class="project-status">Live Project</div>
+                    <div class="project-body">
+                        <div class="project-meta"><span class="project-index mono-dim">p/04</span><span class="project-year mono-dim">2025</span></div>
+                        <h3>Uniportal</h3>
+                        <p class="project-desc">A progressive web app for university life — GPA/CGPA tracking,, timetable manager,, exam countdownsand offline-ready PWA goodness.</p>
+                        <div class="project-tags"><span class="tag">PWA</span><span class="tag">JavaScript</span><span class="tag">LocalStorage</span><span class="tag">Charts</span></div>
                     </div>
-                    <div class="project-content">
-                        <h3>Modern Todo Application</h3>
-                        <p class="project-desc">
-                            Sleek task management app with CRUD operations, category filtering, and persistent storage. 
-                            Built with vanilla JavaScript showcasing clean code practices.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">HTML/CSS</span>
-                            <span class="tag">LocalStorage</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/marcusoji/todoapp" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="https://github.com/marcusoji/todoapp" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
+                </article>
+                <article class="project-card glass reveal" data-delay="100">
+                    <div class="project-media">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=900&amp;q=70" alt="CBT Platform exam application" loading="lazy">
+                        <span class="project-status"><span class="led led-green"></span> LIVE</span>
+                        <div class="project-overlay">
+                            <a href="https://github.com/marcusoji/Cbt-platform" target="_blank" rel="noopener" class="overlay-btn"><i class="fa-brands fa-github"></i> Code</a>
+                            <a href="https://cbt-platform-mu.vercel.app" target="_blank" rel="noopener" class="overlay-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
                         </div>
                     </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800" alt="Techgang Project">
-                        <div class="project-status">Live Project</div>
+                    <div class="project-body">
+                        <div class="project-meta"><span class="project-index mono-dim">p/05</span><span class="project-year mono-dim">2025</span></div>
+                        <h3>CBT Platform</h3>
+                        <p class="project-desc">Computer-based testing platform for WAEC, NECO and JAMB students — timed quizzes,, score analytics and a focused, distraction-free exam flow.</p>
+                        <div class="project-tags"><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span><span class="tag">Timers</span></div>
                     </div>
-                    <div class="project-content">
-                        <h3>Techgang - C++ Project</h3>
-                        <p class="project-desc">
-                            Demonstrating backend proficiency with C++ for algorithmic solutions and 
-                            system-level programming. Showcases problem-solving abilities.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">C++</span>
-                            <span class="tag">Algorithms</span>
-                            <span class="tag">Backend</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/marcusoji/Techgang" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="https://github.com/marcusoji/Techgang" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </a>
+                </article>
+                <article class="project-card glass reveal" data-delay="200">
+                    <div class="project-media">
+                        <img src="https://images.unsplash.com/photo-1523805008232-5e2e6e2387a?w=900&amp;q=70" alt="Marc Nigeria travel blog" loading="lazy">
+                        <span class="project-status"><span class="led led-green"></span> LIVE</span>
+                        <div class="project-overlay">
+                            <a href="https://github.com/marcusoji/marcnigeria" target="_blank" rel="noopener" class="overlay-btn"><i class="fa-brands fa-github"></i> Code</a>
+                            <a href="https://marcusoji.github.io/marcnigeria/" target="_blank" rel="noopener" class="overlay-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
                         </div>
                     </div>
-                </div>
+                    <div class="project-body">
+                        <div class="project-meta"><span class="project-index mono-dim">p/06</span><span class="project-year mono-dim">2025</span></div>
+                        <h3>Marc Nigeria Travel Blog</h3>
+                        <p class="project-desc">A modern travel-discovery site for Nigeria — 70+ destinations across beaches,, waterfalls,, mountainsand cultural landmarks,, with WhatsApp and email booking built in.</p>
+                        <div class="project-tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">EmailJS</span><span class="tag">WhatsApp API</span></div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
-
-    <section id="testimonials">
+    <!-- ============ TESTIMONIALS ============ -->
+    <section id="testimonials" class="section section-alt">
         <div class="container">
-            <div class="section-header">
-                <div class="section-label">Testimonials</div>
-                <h2 class="section-title">What Clients Say</h2>
+            <div class="section-head reveal">
+                <p class="section-code mono-dim">[ 04 //social.proof ]</p>
+                <h2 class="section-title">What clients say<span class="text-accent">.</span></h2>
             </div>
-            <div class="testimonial-card fade-in">
-                <i class="fas fa-quote-left quote-icon"></i>
-                <p class="testimonial-text">
-                    Marcus transformed our outdated website into a modern, user-friendly platform that has 
-                    significantly improved our online presence and customer engagement. His attention to detail 
-                    and creative problem-solving skills are exceptional. He delivered beyond our expectations 
-                    and was a pleasure to work with throughout the entire process.
-                </p>
-                <div class="client-info">
-                    <img src="besty.jpg" alt="Best Oji" class="client-avatar">
+            <figure class="testimonial-card glass reveal">
+                <span class="quote-glyph mono-dim" aria-hidden="true">"</span>
+                <blockquote class="testimonial-text">
+                    Marcus transformed our outdated website into a modern, user-friendly platform that
+                    significantly improved our online presenceand customer engagement. He delivered beyond
+                    expectations and was a pleasure to work with end-to-end..
+                </blockquote>
+                <figcaption class="client-info">
+                    <img src="besty.jpg" alt="Portrait of Best Oji" class="client-avatar">
                     <div class="client-details">
                         <h4>Best Oji</h4>
-                        <p>CEO, Besty Bar</p>
+                        <p class="mono-dim">ceo // besty_bar</p>
                     </div>
-                </div>
-            </div>
+                    <div class="client-rating" aria-label="5 out of 5 stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </figcaption>
+            </figure>
         </div>
     </section>
 
-    <section id="contact">
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section">
         <div class="container">
-            <div class="section-header">
-                <div class="section-label">Get In Touch</div>
-                <h2 class="section-title">Let's Work Together</h2>
-                <p class="section-desc">
-                    Have a project in mind? Let's discuss how I can help bring your vision to life
-                </p>
+            <div class="section-head reveal">
+                <p class="section-code mono-dim">[ 05 //contact ]</p>
+                <h2 class="section-title">Open a channel<span class="text-accent">.</span></h2>
+                <p class="section-desc">Have a system to build or a bug to crush? Let's talk.</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <div class="contact-item fade-in">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
+                    <div class="contact-item glass reveal">
+                        <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
                         <div class="contact-details">
-                            <h4>Email</h4>
+                            <h4>email</h4>
                             <a href="mailto:marcuoji@gmail.com">marcuoji@gmail.com</a>
                         </div>
                     </div>
-
-                    <div class="contact-item fade-in">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
+                    <div class="contact-item glass reveal" data-delay="80">
+                        <span class="contact-icon"><i class="fa-solid fa-phone"></i></span>
                         <div class="contact-details">
-                            <h4>Phone</h4>
+                            <h4>phone / whatsapp</h4>
                             <a href="tel:+2349042007583">+234 904 200 7583</a>
                         </div>
                     </div>
-
-                    <div class="contact-item fade-in">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
+                    <div class="contact-item glass reveal" data-delay="160">
+                        <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
                         <div class="contact-details">
-                            <h4>Location</h4>
-                            <p>Delta State, Nigeria</p>
+                            <h4>location</h4>
+                            <p>Delta State, Nigeria // WAT +1</p>
                         </div>
                     </div>
-
-                    <div class="social-links">
-                        <a href="https://wa.me/2349042007583" target="_blank" class="social-link" title="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
+                    <div class="social-links reveal" data-delay="240">
+                        <a href="https://wa.me/2349042007583" target="_blank" rel="noopener" class="social-btn glass" title="WhatsApp" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/marcus-oji-82a266329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-link" title="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="https://www.linkedin.com/in/marcus-oji-82a266329?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app" target="_blank" rel="noopener" class="social-btn glass" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
                         </a>
-                        <a href="https://x.com/marcuoji?t=991w7h6scdwP3jYwyh2Qgg&s=09" target="_blank" class="social-link" title="Twitter">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://x.com/marcuoji?t=991w7h6scdwP3jYwyh2Qgg&amp;s=09" target="_blank" rel="noopener" class="social-btn glass" title="Twitter / X" aria-label="Twitter">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="https://github.com/marcusoji" target="_blank" rel="noopener" class="social-btn glass" title="GitHub" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
                         </a>
                     </div>
                 </div>
-
-                <form class="contact-form fade-in" id="contactForm">
-                    <div class="form-group">
-                        <label>Your Name</label>
-                        <input type="text" name="name" id="userName" placeholder="John Doe" required>
+                <form class="contact-form glass reveal" id="contactForm" data-delay="150">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="userName">your_name *</label>
+                            <input type="text" name="name" id="userName" placeholder="Ada Lovelace" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="userEmail">your_email *</label>
+                            <input type="email" name="email" id="userEmail" placeholder="ada@example.com" required autocomplete="email">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" name="email" id="userEmail" placeholder="john@example.com" required>
+                        <label for="userSubject">subject</label>
+                        <input type="text" name="subject" id="userSubject" placeholder="Project inquiry / collab">
                     </div>
                     <div class="form-group">
-                        <label>Subject</label>
-                        <input type="text" name="subject" id="userSubject" placeholder="Project Inquiry">
+                        <label for="userMessage">message *</label>
+                        <textarea name="message" id="userMessage" placeholder="Tell me about your system..." required></textarea>
                     </div>
-                    <div class="form-group">
-                        <label>Message</label>
-                        <textarea name="message" id="userMessage" placeholder="Tell me about your project..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">
-                        <i class="fas fa-paper-plane"></i> Send Message
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <span class="btn-label">transmit → whatsapp</span>
+                        <i class="fa-solid fa-paper-plane btn-icon"></i>
                     </button>
+                    <p class="form-note mono-dim">// messages open directly in WhatsApp at +234</p>
                 </form>
             </div>
         </div>
     </section>
+</main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <p class="copyright">© 2025 Oji Marcus Ifeanyichukwu. All rights reserved.</p>
-        </div>
-    </footer>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p class="footer-status"><span class="led led-green"></span> all_systems_operational — © 2025 Marcus Oji</p>
+        <nav class="footer-links" aria-label="Footer">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#skills">skills</a>
+            <a href="#projects">projects</a>
+            <a href="#contact">contact</a>
+        </nav>
+    </div>
+</footer>
+
 <script src="index.js"></script>
 </body>
 </html>
